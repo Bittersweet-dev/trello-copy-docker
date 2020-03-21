@@ -10,5 +10,6 @@ WORKDIR /backend
 
 # run servers
 COPY ./run.sh /backend/
+RUN sed -i 's/\r$//' run.sh
 RUN chmod +x run.sh
 ENTRYPOINT ["/bin/bash", "./run.sh"]
